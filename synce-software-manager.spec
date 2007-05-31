@@ -13,8 +13,9 @@ URL: 		http://synce.sourceforge.net/
 Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-root
 
 Requires: 	synce >= 0.9.0
-BuildRequires: 	synce-devel >= 0.9.0
+BuildRequires: 	libsynce-devel >= 0.9.0
 BuildRequires:	gtk2-devel libgnomeui2-devel
+BuildRequires:	rapi2-devel
 
 %description
 Graphical tool for installing and removing software on a Windows CE device.
