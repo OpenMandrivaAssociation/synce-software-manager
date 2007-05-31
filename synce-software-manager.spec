@@ -1,12 +1,11 @@
 %define name	synce-software-manager
 %define version	0.9.0
-%define release	1mdk
+%define release	%mkrel 2
 
 Summary: 	SynCE: Software manager for GNOME 2
 Name: 		%{name}
 Version: 	0.9.0
 Release: 	%{release}
-
 License: 	MIT LGPL
 Group: 		Communications
 Source: 	%{name}-%{version}.tar.bz2
@@ -32,13 +31,18 @@ rm -fr %buildroot
 %makeinstall
 %find_lang %name
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat > $RPM_BUILD_ROOT%{_menudir}/%{name} <<EOF
-?package(%name): needs="x11" \
-section="More Applications/Communications" \
-title="Synce-software-manager" longtitle="Software manager for WinCE devices" command="%{name}" icon="communications_section.png"
+mkdir -p $RPM_BUILD_ROOT/%{_datadir}/applications
+cat > $RPM_BUILD_ROOT/%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Synce-software-manager
+Comment=Software manager for WinCE devices
+Exec=%_bindir/%{name}
+Icon=communications_section
+Terminal=false
+Type=Application
+Categories=X-MandrivaLinux-Office-Communications-Phone;Network;Telephony;
 EOF
-
 %clean
 rm -fr %buildroot
 
@@ -53,10 +57,4 @@ rm -fr %buildroot
 %doc COPYING ChangeLog
 %{_bindir}/*
 %{_datadir}/synce/synce_software_manager.glade
-%{_menudir}/%name
-
-%Changelog
-* Mon Jan 13 2004 Austin Acton <austin@mandrake.org> 0.9.0-1mdk
-- adapt spec from Nicolas Lécureuil <neoclust@zarb.org>
-- add menu entry
-
+%{_datadir}/applications/mandriva-%{name}.desktop
