@@ -14,7 +14,7 @@ Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-root
 
 Requires: 	synce >= 0.9.0
 BuildRequires: 	libsynce-devel >= 0.9.0
-BuildRequires:	gtk2-devel libgnomeui2-devel
+BuildRequires:	gtk2-devel libgnomeui2-devel libglade2.0-devel
 BuildRequires:	librapi-devel
 
 %description
@@ -24,7 +24,8 @@ Graphical tool for installing and removing software on a Windows CE device.
 %setup -q
 
 %build
-%configure2_5x --with-libsynce=$RPM_BUILD_ROOT%{_prefix} --with-librapi2=$RPM_BUILD_ROOT%{_prefix}
+%configure2_5x --disable-static --with-librapi2-include=%{_includedir} \
+--with-librapi2-lib=%{_libdir}
 %make
 
 %install
