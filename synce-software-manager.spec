@@ -1,6 +1,6 @@
 %define name	synce-software-manager
 %define version	0.9.0
-%define release	%mkrel 2
+%define release	%mkrel 3
 
 Summary: 	SynCE: Software manager for GNOME 2
 Name: 		%{name}
@@ -12,7 +12,6 @@ Source: 	%{name}-%{version}.tar.bz2
 URL: 		http://synce.sourceforge.net/
 Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-root
 
-Requires: 	synce >= 0.9.0
 BuildRequires: 	libsynce-devel >= 0.9.0
 BuildRequires:	gtk2-devel libgnomeui2-devel libglade2.0-devel
 BuildRequires:	librapi-devel
