@@ -1,6 +1,6 @@
 %define name	synce-software-manager
 %define version	0.9.0
-%define release	%mkrel 5
+%define release	%mkrel 6
 
 Summary: 	SynCE: Software manager for GNOME 2
 Name: 		%{name}
