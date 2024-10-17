@@ -9,7 +9,7 @@ Release: 	%{release}
 License: 	MIT LGPL
 Group: 		Communications
 Source: 	%{name}-%{version}.tar.bz2
-URL: 		http://synce.sourceforge.net/
+URL: 		https://synce.sourceforge.net/
 Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires: 	libsynce-devel >= 0.9.0
