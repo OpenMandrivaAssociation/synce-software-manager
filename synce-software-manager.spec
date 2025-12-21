@@ -12,6 +12,11 @@ Source: 	%{name}-%{version}.tar.bz2
 URL: 		https://synce.sourceforge.net/
 Buildroot: 	%{_tmppath}/%{name}-%{version}-%{release}-root
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: 	libsynce-devel >= 0.9.0
 BuildRequires:	gtk2-devel libgnomeui2-devel libglade2.0-devel
 BuildRequires:	librapi-devel
